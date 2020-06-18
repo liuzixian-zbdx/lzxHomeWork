@@ -14,18 +14,18 @@ public class lzxHomeWork {
     public static void main(String[] args) {
         //用户随机输入8个数字
         int a[] = {4,5,6,7,8,9,2,10};
+        System.out.println("用户输入的八个数字为："+ Arrays.toString(a));
         fenlei(a);
     }
 
     public static void fenlei(int[] a){
         int ji = 0;
         int ou = 0;
-        System.out.println("用户输入的八个数字为："+ Arrays.toString(a));
         for(int i=0;i<a.length;i++){
-            if(a[i]%2==0){
-                ou++;
-            }else if(a[i]%2!=0){
+            if(a[i]%2!=0){
                 ji++;
+            }else if(a[i]%2==0){
+                ou++;
             }
         }
         //定义奇数、偶数数组
@@ -45,6 +45,30 @@ public class lzxHomeWork {
         }
         System.out.println("奇数数组为："+Arrays.toString(jishu));
         System.out.println("偶数数组为："+Arrays.toString(oushu));
+        //if语法判断不同情况，并交替输出奇数偶数
+        System.out.println("数组交替输出为：");
+        if(m>n){
+            for(int i=0;i<n;i++){
+                System.out.print(jishu[i]+"\t");
+                System.out.print(oushu[i]+"\t");
+            }
+            for(int i=n;i<m;i++){
+                System.out.print(jishu[i]+"\t");
+            }
+        }else if(m<n){
+            for(int i=0;i<m;i++){
+                System.out.print(jishu[i]+"\t");
+                System.out.print(oushu[i]+"\t");
+            }
+            for(int i=m;i<n;i++){
+                System.out.print(oushu[i]+"\t");
+            }
+        }else if(m==n){
+            for(int i=0;i<m;i++){
+                System.out.print(jishu[i]+"\t");
+                System.out.print(oushu[i]+"\t");
+            }
+        }
     }
 
 }
